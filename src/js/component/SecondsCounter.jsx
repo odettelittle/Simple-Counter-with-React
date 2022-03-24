@@ -1,5 +1,4 @@
 import React from "react";
-import { ClockIcon } from "./clock.jsx";
 
 export function SecondsCounter(props) {
 	const d1 = Math.floor((props.seconds / 100000) % 10);

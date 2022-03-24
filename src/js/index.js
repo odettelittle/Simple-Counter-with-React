@@ -6,7 +6,17 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+import { SecondsCounter } from "./component/SecondsCounter.jsx";
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+const start = Date.now();
+
+setInterval(() => {
+	const seconds = Math.floor((Date.now() - start) / 1000);
+	//render your react application
+	ReactDOM.render(
+		<>
+			<SecondsCounter seconds={seconds} />,
+		</>,
+		document.querySelector("#app")
+	);
+}, 1000);
